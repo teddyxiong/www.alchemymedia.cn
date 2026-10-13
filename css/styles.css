@@ -599,7 +599,8 @@ html[data-locale="zh"] .ticker__group span {
 }
 
 section[id],
-footer[id] {
+footer[id],
+.service[id] {
   scroll-margin-top: var(--header-h);
 }
 
