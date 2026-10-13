@@ -23,7 +23,7 @@
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 
-  --header-h: 68px;
+  --header-h: 78px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --max-w: 1320px;
 
@@ -32,7 +32,7 @@
 
 @media (min-width: 900px) {
   :root {
-    --header-h: 84px;
+    --header-h: 104px;
   }
 }
 
@@ -241,48 +241,31 @@ html[data-locale="en"] [data-lang="zh"] {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
   text-decoration: none;
   flex: none;
 }
 
+/* Full logo lockup: the head-and-galaxy emblem sits above the
+   "ALCHEMY MEDIA" wordmark. The source PNG is a square canvas padded
+   with transparent margins, so the wrapper crops to the exact artwork
+   bounds (measured: x 107-2250, y 167-2159 of 2362x2362) and scales the
+   whole logo up — otherwise the wordmark would be unreadable. */
 .brand__mark {
   position: relative;
   display: block;
-  width: 60px;
-  height: 40px;
+  height: clamp(54px, 5.6vw, 76px);
+  aspect-ratio: 2271 / 2112;
   overflow: hidden;
   flex: none;
 }
 
-/* Source artwork is square with the wordmark on the lower third;
-   crop to the head-and-galaxy emblem so the mark stays legible. */
 .brand__mark img {
   position: absolute;
-  width: 60px;
+  width: 104.01%;
   height: auto;
   max-width: none;
-  left: 0;
-  top: -2px;
-}
-
-.brand__word {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  line-height: 1;
-  letter-spacing: 0.06em;
-}
-
-.brand__word-sub {
-  margin-top: 0.22em;
-  align-self: flex-start;
-  padding: 0.08em 0.34em 0.14em;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.6rem;
-  letter-spacing: 0.34em;
+  left: -1.89%;
+  top: -5.07%;
 }
 
 /* Nav */
@@ -476,6 +459,14 @@ html[data-locale="en"] [data-lang="zh"] {
 .hero__inner {
   padding-top: clamp(3rem, 10vw, 7rem);
   padding-bottom: clamp(1.75rem, 4vw, 3rem);
+}
+
+.eyebrow--hero {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
 }
 
 .eyebrow--hero::before {
@@ -1067,10 +1058,6 @@ html[data-locale="zh"] .footer__title {
 }
 
 @media (max-width: 620px) {
-  .brand__word {
-    display: none;
-  }
-
   .hero__lead {
     max-width: none;
   }

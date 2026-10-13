@@ -7,7 +7,7 @@
   'use strict';
 
   var STORAGE_KEY = 'alchemy.locale';
-  var DEFAULT_LOCALE = 'zh';
+  var DEFAULT_LOCALE = 'en';
   var SUPPORTED = ['zh', 'en'];
   var root = document.documentElement;
 
