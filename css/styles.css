@@ -529,29 +529,48 @@ html[data-locale="zh"] .hero__title {
   -webkit-backdrop-filter: blur(6px);
 }
 
+/* Static state (no JS, or prefers-reduced-motion): a centred, wrapping
+   keyword strip so nothing is clipped and the row reads as intentional. */
 .ticker__track {
   display: flex;
-  width: max-content;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
+/* Motion allowed: single-line marquee. */
 .ticker__track.is-looping {
+  flex-wrap: nowrap;
+  width: max-content;
   animation: tickerScroll 32s linear infinite;
 }
 
 .ticker__group {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.6rem;
-  padding: 0.95rem 1.6rem 0.95rem 0;
+  justify-content: center;
+  gap: 0.55rem 1.4rem;
+  padding-block: 0.95rem;
+}
+
+/* Trailing gap keeps the duplicated group seamless while looping. */
+.ticker__track.is-looping .ticker__group {
+  flex-wrap: nowrap;
+  padding-right: 1.4rem;
 }
 
 .ticker__group span {
   font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(244, 241, 234, 0.6);
   white-space: nowrap;
+}
+
+html[data-locale="zh"] .ticker__group span {
+  letter-spacing: 0.22em;
 }
 
 .ticker__group i {
