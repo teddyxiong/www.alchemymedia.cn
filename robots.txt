@@ -1,3 +1,4 @@
+# Public bilingual pages and service information are available to search crawlers.
 User-agent: *
 Allow: /
 
