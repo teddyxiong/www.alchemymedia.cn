@@ -152,7 +152,5 @@
       window.clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(measureWork, 180);
     });
-
-    document.addEventListener('localechange', measureWork);
   }
 })();
