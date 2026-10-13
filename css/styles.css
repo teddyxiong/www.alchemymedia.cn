@@ -921,6 +921,14 @@ html[data-locale="zh"] .footer__title {
   letter-spacing: 0.035em;
 }
 
+.footer__lead {
+  max-width: 54ch;
+  margin-top: clamp(0.9rem, 1.8vw, 1.35rem);
+  font-size: clamp(0.97rem, 1.1vw, 1.06rem);
+  line-height: 1.8;
+  color: rgba(10, 10, 11, 0.62);
+}
+
 .footer__mail {
   display: inline-block;
   margin-top: clamp(1.5rem, 3vw, 2.25rem);
